@@ -1,0 +1,4 @@
+,Unnamed: 0,Unnamed: 0.1,Unnamed: 0.1.1,date,strategy,stock,action,price,amount,commission,profit
+0,0.0,0.0,,2021-04-26,volume&hull,PHOT,BOT,0.1407,74,,
+1,1.0,,,2021-04-26,volume&hull,IMO,BOT,26.565,1,,
+2,,,,2021-04-26,volume&hull,WDDMF,BOT,0.27825000000000005,37,,
