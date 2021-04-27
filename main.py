@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 from screeners import StockwitsScreener, TradingviewScreener
 from datetime import datetime
+from time import sleep
 
 
 class Bot:
@@ -300,17 +301,17 @@ pennyscreeners_dic = {
 """ let function run during trading hours """
 
 def runbot():
-    bot = Bot()
-
     # run trading strategies
     for strategy in pennyscreeners_dic:
         pennyFilter = PennyFilter(strategy)
         pennyFilter.run()
+        pennyFilter.ib.disconnect()
 
     # run IB connection once at market open and sleep until market close
-    bot.ib.sleep(60*60*9)
+    sleep(60*60*9)
 
     # log trades and disconnect from IB
+    bot = Bot()
     bot.logdata()
     bot.ib.disconnect()
 
